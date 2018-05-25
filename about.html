@@ -28,39 +28,47 @@
         </nav>
         <!-- CONTAINER START -->
         <div class="container">
-                <h3>Register</h3>
-                <div class="row">
-                        <form class="col s12">
-                          <div class="row">
-                                <p class="flat-text small"></p>
-                            <div class="input-field col s6">
-                              <input id="first_name" type="text" class="validate">
-                              <label for="first_name">First Name</label>
+                <h3>About The Team</h3>
+                <div class="slider">
+                        <ul class="slides">
+                        <li>
+                            <img src="http://hdqwalls.com/wallpapers/minimalist-mountains-black-and-white-ap.jpg" alt="">
+                            <div class="caption left-align">
+                              <h3 class="grey-text text-darken-3">Paul Park</h3>
+                              <h5 class="light grey-text text-lighten-1">
+                                <a href="https://github.com/parkpaul94" target="_blank">Github</a>
+                              </h5>
                             </div>
-                            <div class="input-field col s6">
-                              <input id="last_name" type="text" class="validate">
-                              <label for="last_name">Last Name</label>
+                        </li>
+                        <li>
+                            <img src="assets/images/wallpaper2.png" alt="">
+                            <div class="caption left-align">
+                              <h3 class="grey-text text-darken-3">Ivan Ivanov</h3>
+                              <h5 class="light grey-text text-lighten-1">
+                                    <a href="https://github.com/ivanov92" target="_blank">Github</a>
+                                  </h5>
                             </div>
-                          </div>
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <input id="password" type="password" class="validate">
-                              <label for="password">Password</label>
+                          </li>
+                        <li>
+                            <img src="assets/images/wallpaper3.jpg" alt="">
+                            <div class="caption left-align">
+                              <h3 class="grey-text text-darken-3">Shinkay Baz</h3>
+                              <h5 class="light grey-text text-lighten-1">
+                                    <a href="https://github.com/shinkaybaz" target="_blank">Github</a>
+                                  </h5>
                             </div>
-                          </div>
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <input id="email" type="email" class="validate">
-                              <label for="email">Email</label>
+                          </li>
+                        <li>
+                            <img src="assets/images/wallpaper4.jpg" alt="">
+                            <div class="caption left-align">
+                              <h3 class="grey-text text-darken-3">Michael Todd</h3>
+                              <h5 class="light grey-text text-lighten-1">
+                                    <a href="https://github.com/mbtodd" target="_blank">Github</a>
+                                  </h5>
                             </div>
-                          </div>
-                        </form>
+                          </li>
+                        </ul>
                       </div>
-
-                    <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Submit
-                        <i class="material-icons right">send</i>
-                    </button>
-
         </div>
         <!-- CONTAINER END -->
 
@@ -75,8 +83,6 @@
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script>
-            $(".dropdown-trigger").dropdown();
-        </script>
+        <script>$('.slider').slider();</script>
     </body>
 </html>
