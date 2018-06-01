@@ -12,7 +12,19 @@ CREATE TABLE doTable (
 	primary key (item_id)
 );
 
-INSERT INTO doTable(Category, Activity, Price, Description, Rating)
-VALUES ("Outdoor", "Riding", 200, "xxxxxxx", 6),
-    ("Outdoor", "Shopping", 100, "xxxxxxx", 8),
-        ("Outdoor", "Eating", 200, "xxxxxxx", 6);
+-- INSERT INTO doTable(Category, Activity, Price, Description, Rating)
+-- VALUES ("Outdoor", "Riding", 200, "xxxxxxx", 6),
+--     ("Outdoor", "Shopping", 100, "xxxxxxx", 8),
+--         ("Outdoor", "Eating", 200, "xxxxxxx", 6);
+
+DROP DATABASE IF EXISTS users;
+CREATE DATABASE users;
+USE users;
+
+CREATE TABLE userInfo (
+	user_id INTEGER AUTO_INCREMENT NOT NULL,
+	Email VARCHAR(40) NOT NULL,
+	Password VARCHAR(40) NOT NULL,
+    UserName VARCHAR(20) NOT NULL,
+	primary key (item_id)
+);
