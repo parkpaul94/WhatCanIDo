@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+        <title>WhatCanIDo</title>
+        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
+        <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+        
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="index.html" class="brand-logo center">WhatCanIDo</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="about.html">About</a></li>
+                <li><a href="content.html">Things To Do</a></li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- CONTAINER START -->
+        <div class="container">
+                <div class="row" style="margin-top: .5%">
+                    <div class="col s8"><span class="flow-text">
+                        <h4 class="center">What Should You Do?</h4><hr>
+
+                        <div class="carousel carousel-slider center">
+                                <div class="carousel-fixed-item center">
+                                  <a class="btn waves-effect grey darken-4" href="add.html">Add Your Own!</a>
+                                </div>
+                                <div class="carousel-item white-text carousel1">
+                                  <h2>Hot Air Balloon</h2>
+                                  <!-- <p class="white-text">Make new friends in the skies above Virginia!
+                                      <br>Make your adventure something truly unforgettable!</p> -->
+                                </div>
+                                <div class="carousel-item black-text carousel2" href="#two!">
+                                  <h2>Movie Night</h2>
+                                  <!-- <p class="black-text">Enjoy your Night Out with amazing selection of movies!
+                                      <br>Enjoy your comfortable sofa seats and a bag of popcorn and heart pounding action!
+                                  </p> -->
+                                </div>
+                                <div class="carousel-item black-text carousel3" href="#three!">
+                                  <h2>Amusement Park</h2>
+                                  <!-- <p class="black-text">Spend the day in amazing theme parks!
+                                      <br>Drop from 305 feet reaching speeds up to 90mph!
+                                  </p> -->
+                                </div>
+                                <div class="carousel-item white-text carousel4" href="#four!">
+                                  <h2>Night Life</h2>
+                                  <!-- <p class="white-text">Spend the night Dancing to your favorite music from your favorite artist
+                                      <br>in the Country's Capital!
+                                  </p> -->
+                                </div>
+                              </div>                            
+
+                    </span></div>
+                    <div class="col s4 "><span class="flow-text">
+                        <h4 class="center">Log In</h4><hr>
+                        <div class="row">
+                                <div class="input-field col s12">
+                                  <i class="material-icons prefix">mail_outline</i>
+                                  <input class="validate" id="email" type="email">
+                                  <label for="email" data-error="wrong" data-success="right">Email</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <i class="material-icons prefix">lock_outline</i>
+                                  <input id="password" type="password">
+                                  <label for="password">Password</label>
+                                </div>
+                              </div>
+                              <div class="row">
+                                <div class="input-field col s12">
+                                  <a href="#" class="btn waves-effect waves-light col s12">Login</a>
+                                  <br>
+                                  <br>
+                                  <!-- NOT SURE IF I SHOULD KEEP THIS, OR REMOVE IT SINCE THERE IS A REGISTER LINK ON THE NAV BAR. NOT SURE IF IT'S REDUNDANT. -->
+                                  <a href="register.html" class="btn waves-effect waves-light col s12">Register</a>
+                                </div>
+                              </div>
+                    </span></div>
+                </div>
+
+
+                <div class="fixed-action-btn">
+                        <a id="menu" onclick="$('.tap-target').tapTarget('open')" class="waves-effect waves-light btn btn-floating btn-large grey darken-4">
+                          <i class="material-icons">favorite_border</i>
+                        </a>
+                      </div>
+              
+                      <!-- TAP TARGET CONTENT -->
+                      <div class="tap-target grey darken-4" data-activates="menu">
+                        <div class="tap-target-content white-text">
+                          <h5>What is WhatCanIDo?</h5>
+                          <p class="white-text">
+                              WhatCanIDo? Is a website where users can post data of things you can do within specific price range to help others who aren't sure what they can do with certain amount of money.
+                          </p>
+                        </div>
+                      </div>
+
+        </div>
+        <!-- CONTAINER END -->
+
+            <!-- <div class="fixed-action-btn">
+                <a href="#" class="btn-floating grey darken-4 btn-large"><i class="large material-icons">menu</i></a>
+                <ul>
+                    <li><a href="add.html" class="btn-floating indigo darken-4 btn-large" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="large material-icons">add</i></a></li>
+                    <li><a href="finance.html" class="btn-floating green darken-4 btn-large" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="large material-icons">attach_money</i></a></li>
+                </ul>
+            </div> -->
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+        <script>
+        $('.carousel.carousel-slider').carousel({
+            fullWidth: true,
+            indicators: true
+        });
+                
+        </script>
+    </body>
+</html>
