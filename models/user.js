@@ -8,13 +8,6 @@ module.exports = (sequelize, DataTypes) => {
             autoIncrement: true,
             primaryKey: true
         },
-        email: {
-            type:DataTypes.STRING(255),
-            allowNull: false,
-            validate: {
-                isEmail: true
-            }
-        },
         firstname: {
             type:DataTypes.STRING(255),
             allowNull: false
@@ -26,6 +19,13 @@ module.exports = (sequelize, DataTypes) => {
         pass: {
             type:DataTypes.STRING(255),
             allowNull: false
+        },
+        email: {
+            type:DataTypes.STRING(255),
+            allowNull: false,
+            validate: {
+                isEmail: true
+            }
         },
         lastlogin_time: {
             type:DataTypes.DATE
