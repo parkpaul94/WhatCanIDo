@@ -20,12 +20,33 @@ module.exports = function (app) {
         // server sends two calls to database (query)
         // "is there a matching username in the db with this info"
         // "does their password match?" (passport)
-        db.User.findOne(req.body).then(function(user) {
+        db.User.findOne(req.body, { where: { email: req.body.email, pass: req.body.pass }}).then(function(user) {
             res.json(user);
+            // console.log(user);
+            if (req.body.email && req.body.pass === true) {
+                console.log("Both Match");
+            }
             // if true (to the both conditions), go to other route
             // res.render('html file')
         })
     })
+    app.post('/api/budget', function(req, res) {
+        var budget = req.body;
+        console.log(budget);
+        db.Budget.create(req.body).then(function(budget) {
+            res.json(budget);
+        })
+    })
+    app.get('/api/budget', function(req, res) {
+        var query = {};
+        if (req.query.author_id) {
+            query.AuthorId = req.query.author_id;
+          }
+        db.Budget.findAll({ where: query, include: [db.User]})
+        .then(function(dbBudget) {
+            res.json(dbBudget)
+        });
+        });
 };
 
 

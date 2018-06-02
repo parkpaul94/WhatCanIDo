@@ -7,7 +7,7 @@ $(document).ready(function() {
                 firstname: $('#first_name').val(), 
                 lastname: $('#last_name').val(),
                 pass: $('#password').val(),
-                email: $('#email').val(),
+                email: $('#email').val()
             }
           })
             .done(function(msg) {
@@ -22,12 +22,27 @@ $(document).ready(function() {
             url: "http://localhost:8080/api/login",
             data: { 
                 email: $('#email').val(),
-                pass: $('#password').val(),
+                pass: $('#password').val()
             }
         })
         .done(function(msg) {
             console.log('Logged In');
         })
         event.preventDefault();
+    })
+
+    $('#budget_submit').on('click', function (event) {
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/api/budget",
+            data: {
+                description: $('#description').val(),
+                cost: $('#price').val()
+            }
+        }).done(function(msg) {
+            console.log('Budget Logged');
+            $('#description').val('');
+            $('#price').val('');
+        })
     })
 })
