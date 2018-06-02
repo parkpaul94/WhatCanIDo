@@ -1,4 +1,5 @@
 const db = require("../models");
+const Activity = require("../models/activity");
 
 module.exports = function (app) {
     app.post('/api/register/', function(req, res) {
@@ -37,7 +38,7 @@ module.exports = function (app) {
       });
 
     app.get("/api/content", function(req,res) {
-        db.Activity.findAll()
+        db.Activity.findAll({})
         .then(function(activities){
             res.json(activities);
         });

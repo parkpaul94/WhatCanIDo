@@ -50,7 +50,7 @@ $("#submit-btn").on("click", function(event) {
 
     console.log(newContent);
 
-      $.post("/content.html", newContent,
+      $.post("/api/add", newContent,
       function(data) {
 
         if (data) {
@@ -61,11 +61,11 @@ $("#submit-btn").on("click", function(event) {
           alert("Not adding");
         }
 
-        $("#category").val("");
-        $("#activity").val("");
-        $("#rating").val("");
-        $("#price").val("");
-        $("#description").val("");
+        $("#category").val();
+        $("#activity").val();
+        $("#rating").val();
+        $("#price").val();
+        $("#description").val();
 
 
       });
