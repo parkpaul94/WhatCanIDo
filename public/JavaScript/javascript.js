@@ -15,9 +15,7 @@ $(document).ready(function() {
         })
         event.preventDefault();
     })
-})
-
-$(document).ready(function() {
+    
     $('#login_submit').on('click', function (event) {
         $.ajax({
             method: "POST",
@@ -26,9 +24,10 @@ $(document).ready(function() {
                 email: $('#email').val(),
                 pass: $('#password').val(),
             }
-          })
-            .done(function(msg) {
-                console.log('string', msg);
         })
+        .done(function(msg) {
+            console.log('Logged In');
+        })
+        event.preventDefault();
     })
 })

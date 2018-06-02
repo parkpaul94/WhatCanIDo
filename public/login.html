@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+        <title>WhatCanIDo</title>
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
+        <script src="https://code.jquery.com/jquery.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+        
+    </head>
+    <body>
+        <!-- NAV BAR -->
+        <nav>
+            <div class="nav-wrapper grey darken-4">
+                <a href="index.html" class="brand-logo center">WhatCanIDo</a>
+                <ul id="nav-mobile" class="left hide-on-med-and-down">
+                <li><a href="about.html">About</a></li>
+                <li><a href="content.html">Things To Do</a></li>
+                </ul>
+                <ul id="nav-mobile" class="right hide-on-med-and-down">
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="register.html">Register</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- CONTAINER START -->
+        <div class="container">
+            <div class="row" style="margin-top: .5%">
+                <div class="col s12"><span class="flow-text">
+                    <h4 class="center">Log In</h4><hr>
+                    <div class="row">
+                            <div class="input-field col s8">
+                              <i class="material-icons prefix">mail_outline</i>
+                              <input class="validate" id="email" type="email">
+                              <label for="email" data-error="wrong" data-success="right">Email</label>
+                            </div>
+                          </div>
+
+                    <div class="row">
+                        <div class="input-field col s8">
+                            <i class="material-icons prefix">lock_outline</i>
+                            <input id="password" type="password">
+                            <label for="password">Password</label>
+                        </div>
+                        </div>
+                        <div class="col s12">
+                                <a href="#" id="login_submit" class="btn waves-effect waves-light col s12">Login</a>
+                </span></div>
+            </div>
+        </div>
+        <!-- CONTAINER END -->
+
+            <div class="fixed-action-btn">
+                <a href="#" class="btn-floating grey darken-4 btn-large"><i class="large material-icons">menu</i></a>
+                <ul>
+                    <li><a href="add.html" class="btn-floating indigo darken-4 btn-large" style="transform: scaleY(0.4) scaleX(0.4) translateY(40px) translateX(0px); opacity: 0;"><i class="large material-icons">add</i></a></li>
+                </ul>
+            </div>
+
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+        <script type="text/javascript" src="JavaScript/javascript.js"></script>
+    </body>
+</html>

@@ -12,9 +12,9 @@ module.exports = function (app) {
         })
     })
     app.post('/api/login/', function(req, res) {
-// receive login info from browser (post)
-// front-end ajax call
-// back-end receives data...
+    // receive login info from browser (post)
+    // front-end ajax call
+    // back-end receives data...
         var login = req.body;
         console.log(login);
         // server sends two calls to database (query)
