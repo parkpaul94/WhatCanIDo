@@ -1,4 +1,5 @@
 const db = require("../models");
+const Activity = require("../models/activity");
 
 module.exports = function (app) {
     app.post('/api/register/', function(req, res) {
@@ -30,6 +31,22 @@ module.exports = function (app) {
             // res.render('html file')
         })
     })
+
+    // routes for grabbing the activities from content page
+
+    app.post("/api/add", function(req, res) {
+        db.Activity.create(req.body).then(function(activity) {
+            res.json(activity);
+        })
+      });
+
+    app.get("/api/content", function(req,res) {
+        db.Activity.findAll({})
+        .then(function(activities){
+            res.json(activities);
+        });
+    });
+
     app.post('/api/budget', function(req, res) {
         var budget = req.body;
         console.log(budget);
@@ -46,7 +63,7 @@ module.exports = function (app) {
         .then(function(dbBudget) {
             res.json(dbBudget)
         });
-        });
+     });
 };
 
 

@@ -46,3 +46,42 @@ $(document).ready(function() {
         })
     })
 })
+
+
+// Adding the activity to the content page 
+
+
+$("#submit-btn").on("click", function(event) {
+    event.preventDefault();
+
+    var newContent = {
+      category: $("#category").val().trim(),
+      activity: $("#activity").val().trim(),
+      rating: $("#rating").val().trim(),
+      price: $("#price").val().trim(),
+      description: $("#description").val().trim()
+    };
+
+    console.log(newContent);
+
+      $.post("/api/add", newContent,
+      function(data) {
+
+        if (data) {
+          alert("Yay! You are officially adding");
+        }
+
+        else {
+          alert("Not adding");
+        }
+
+        $("#category").val();
+        $("#activity").val();
+        $("#rating").val();
+        $("#price").val();
+        $("#description").val();
+
+
+      });
+
+  });
