@@ -16,3 +16,19 @@ $(document).ready(function() {
         event.preventDefault();
     })
 })
+
+$(document).ready(function() {
+    $('#login_submit').on('click', function (event) {
+        $.ajax({
+            method: "POST",
+            url: "http://localhost:8080/api/login",
+            data: { 
+                email: $('#email').val(),
+                pass: $('#password').val(),
+            }
+          })
+            .done(function(msg) {
+                console.log('string', msg);
+        })
+    })
+})

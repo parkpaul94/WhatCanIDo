@@ -11,4 +11,21 @@ module.exports = function (app) {
             res.json(user);
         })
     })
+    app.post('/api/login/', function(req, res) {
+// receive login info from browser (post)
+// front-end ajax call
+// back-end receives data...
+        var login = req.body;
+        console.log(login);
+        // server sends two calls to database (query)
+        // "is there a matching username in the db with this info"
+        // "does their password match?" (passport)
+        db.User.findOne(req.body).then(function(user) {
+            res.json(user);
+            // if true (to the both conditions), go to other route
+            // res.render('html file')
+        })
+    })
 };
+
+
