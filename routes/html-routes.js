@@ -18,6 +18,11 @@ module.exports = function(app) {
 //     console.log('\nindex.html');
 //   });
 
+  app.get("/", function(req, res) {
+    res.sendFile(path.join(__dirname, "../index.html"));
+    console.log('\nindex.html');
+  });
+
   app.get("/index.html", function(req, res) {
     res.sendFile(path.join(__dirname, "../index.html"));
     console.log('\nindex.html');

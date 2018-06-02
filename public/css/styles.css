@@ -1,9 +1,6 @@
 body, nav {
     font-family: 'Julius Sans One', sans-serif;
 }
-.brand-logo {
-    margin-left: 1%;
-}
 .indicator-item.active, .btn {
     background-color: #212121 !important;
 }
