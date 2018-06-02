@@ -3,12 +3,12 @@
     <head>
     <meta charset="UTF-8">
         <title>WhatCanIDo</title>
-        <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
-        <link rel="stylesheet" type="text/css" href="assets/css/styles.css">
+        <link rel="stylesheet" type="text/css" href="css/reset.css">
+        <link rel="stylesheet" type="text/css" href="css/styles.css">
         <script src="https://code.jquery.com/jquery.js"></script>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0-beta/css/materialize.min.css">
         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-        <link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Julius+Sans+One" rel="stylesheet">
         
     </head>
     <body>
@@ -28,36 +28,39 @@
         </nav>
         <!-- CONTAINER START -->
         <div class="container">
-                <h3 style="margin-top: 3%">Register</h3>
+                <h3 style="margin-top: 3%">Add a Thing to Do!</h3>
                 <div class="row">
-                        <form class="col s12">
-                          <div class="row">
-                                <p class="flat-text small"></p>
+                    <form class="col s12">
+                        <div class="row">
                             <div class="input-field col s6">
-                              <input id="first_name" type="text" class="validate">
-                              <label for="first_name">First Name</label>
+                                <input id="category" type="text" class="validate">
+                                <label for="category">Category</label>
                             </div>
                             <div class="input-field col s6">
-                              <input id="last_name" type="text" class="validate">
-                              <label for="last_name">Last Name</label>
+                                <input id="activity" type="text" class="validate">
+                                <label for="activity">Activity</label>
                             </div>
-                          </div>
-                          <div class="row">
+                        </div>
+                        <div class="row">
+                            <div class="input-field col s6">
+                                <input id="rating" type="text" class="validate">
+                                <label for="rating">Rating</label>
+                            </div>
+                            <div class="input-field col s6">
+                                <input id="price" type="text" class="validate">
+                                <label for="price">Price</label>
+                            </div>
+                        </div>
+                        <div class="row">
                             <div class="input-field col s12">
-                              <input id="password" type="password" class="validate">
-                              <label for="password">Password</label>
+                                <textarea type="description" id="textarea" class="materialize-textarea" style="height: 176px;"></textarea>
+                                <label for="description">Description</label>
                             </div>
-                          </div>
-                          <div class="row">
-                            <div class="input-field col s12">
-                              <input id="email" type="email" class="validate">
-                              <label for="email">Email</label>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
+                        </div>
+                    </form>
+                </div>
 
-                    <button id ="reg_submit" class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Submit
+                    <button class="btn waves-effect waves-light grey darken-4" type="submit" name="action">Add
                         <i class="material-icons right">send</i>
                     </button>
 
@@ -75,9 +78,5 @@
 
         <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
-        <script>
-            $(".dropdown-trigger").dropdown();
-        </script>
-        <script type="text/javascript" src="assets/JavaScript/javascript.js"></script>
     </body>
 </html>
