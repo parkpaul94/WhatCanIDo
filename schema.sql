@@ -1,8 +1,8 @@
-DROP DATABASE IF EXISTS activityDB;
-CREATE DATABASE activityDB;
-USE activityDB;
+DROP DATABASE IF EXISTS users;
+CREATE DATABASE users;
+USE users;
 
-CREATE TABLE doTable (
+CREATE TABLE activity (
 	item_id INTEGER AUTO_INCREMENT NOT NULL,
 	Category VARCHAR(40) NOT NULL,
 	Activity VARCHAR(40) NOT NULL,
@@ -17,9 +17,7 @@ CREATE TABLE doTable (
 --     ("Outdoor", "Shopping", 100, "xxxxxxx", 8),
 --         ("Outdoor", "Eating", 200, "xxxxxxx", 6);
 
-DROP DATABASE IF EXISTS users;
-CREATE DATABASE users;
-USE users;
+
 
 CREATE TABLE userInfo (
 	user_id INTEGER AUTO_INCREMENT NOT NULL,

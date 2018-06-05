@@ -45,8 +45,6 @@ $(document).ready(function() {
             $('#price').val('');
         })
     })
-})
-
 
 // Adding the activity to the content page 
 
@@ -85,3 +83,5 @@ $("#submit-btn").on("click", function(event) {
       });
 
   });
+
+})
