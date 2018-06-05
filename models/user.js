@@ -35,8 +35,8 @@ module.exports = (sequelize, DataTypes) => {
     },
     { timestamps: true },
     { classMethods: {
-        validPassword: (pass, psswd, done, user) => {
-            bcrypt.comparew(pass, passwd, (err, isMatch) => {
+        validPassword: (pass, passwd, done, user) => {
+            bcrypt.compare(pass, passwd, (err, isMatch) => {
                 if (err) console.log(err);
                 if (isMatch) {
                     return done(null, user)
@@ -48,6 +48,6 @@ module.exports = (sequelize, DataTypes) => {
             }
         }
     });
+    
     return User;
 }
-
