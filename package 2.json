@@ -1,22 +1,16 @@
 {
-  "name": "whatcanido",
+  "name": "2-project",
   "version": "1.0.0",
-  "description": "Project2",
-  "main": "javascript.js",
+  "description": "",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "watch": "nodemon server.js"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/parkpaul94/WhatCanIDo.git"
-  },
+  "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/parkpaul94/WhatCanIDo/issues"
-  },
-  "homepage": "https://github.com/parkpaul94/WhatCanIDo#readme",
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.18.3",
