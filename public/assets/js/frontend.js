@@ -32,10 +32,8 @@ $('.carousel.carousel-slider').carousel({
 });
 
 $('.slider').slider();
+$('select').formSelect();
 
-
-
-console.log('TESTING');
     $.ajax({
         type: 'GET',
         url: "/api/budget",
@@ -45,7 +43,6 @@ console.log('TESTING');
     })
 
     $('#budget_submit').on('click', function (event) {
-        console.log('POSTING TEST');
         var postData = {
             description: $('#description').val(),
             cost: $('#price').val()
@@ -55,8 +52,35 @@ console.log('TESTING');
             type: "POST",
             data: postData
         }).done(function(msg) {
-            console.log('Budget Logged');
             $('#description').val('');
+            $('#price').val('');
+            $('body').html(msg)
+        })
+    })
+   
+    $.ajax({
+        type: 'GET',
+        url: "/api/content",
+    })
+    .then(function(data) {
+        $('#table') // append DATA to table
+    })
+    
+    $('#activity_submit').on('click', function (event) {
+        var postData = {
+            categories: $('#category').val(),
+            activity: $('#activity').val(),
+            rating: $('#rating').val(),
+            cost: $('#price').val()
+        };
+        console.log(postData)
+        $.ajax("/api/content", {
+            type: "POST",
+            data: postData
+        }).done(function(msg) {
+            $('#category').val('');
+            $('#activity').val('');
+            $('#rating').val('');
             $('#price').val('');
             $('body').html(msg)
         })

@@ -24,6 +24,29 @@ module.exports = function (app) {
             res.json(err);
         })
     });
+
+    app.post('/api/content', function(req, res) {
+        var active = req.body;
+        console.log(active);
+        db.Content.create(req.body).then(function(active) {
+            res.redirect('/profile');
+        });
+    })
+    app.get("/api/content", function(req, res) {
+        db.Content.findAll()
+        .then(function (dbContent) {
+            if (dbContent.length===0) {
+                // throw "No results";
+            };
+            res.render('content',{
+                activities: dbContent,
+            });
+            return({activities: dbContent});
+        })
+        .catch(function (err) {
+            res.json(err);
+        })
+    });
 };
 
 

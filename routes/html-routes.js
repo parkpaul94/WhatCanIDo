@@ -64,8 +64,20 @@ module.exports = function(app) {
         res.json(err);
     })
   });
-  // app.get("/budget", function(req, res) {
-  //   res.render(path.join("budget.handlebars"));
-  //   console.log('\nbudget');
-  // });
+
+  app.get("/content", function(req, res) {
+    db.Content.findAll()
+    .then(function (dbContent) {
+        if (dbContent.length===0) {
+            // throw "No results";
+        };
+        res.render('content',{
+            activities: dbContent,
+        });
+        return({activities: dbContent});
+    })
+    .catch(function (err) {
+        res.json(err);
+    })
+  });
 };
