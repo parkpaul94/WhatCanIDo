@@ -1,59 +1,56 @@
-// *********************************************************************************
-// html-routes.js - this file offers a set of routes for sending users to the various html pages
-// *********************************************************************************
-
-// Dependencies
-// =============================================================
 var path = require("path");
 
 // Routes
 // =============================================================
 module.exports = function(app) {
 
-  // Each of the below routes just handles the HTML page that the user gets sent to.
 
-  // index route loads view.html
-//   app.get("/", function(req, res) {
-//     res.sendFile(path.join(__dirname, "../index.html"));
-//     console.log('\nindex.html');
-//   });
 
   app.get("/", function(req, res) {
-    res.sendFile(path.join(__dirname, "../index.html"));
-    console.log('\nindex.html');
+    res.render(path.join(__dirname, "../views"));
+    console.log('\nindex');
   });
 
-  app.get("/index.html", function(req, res) {
-    res.sendFile(path.join(__dirname, "../index.html"));
-    console.log('\nindex.html');
+  app.get("/index", function(req, res) {
+    res.render(path.join("index.handlebars"));
+    console.log('\nindex');
   });
 
-  // cms route loads cms.html
-  app.get("/add.html", function(req, res) {
-    res.sendFile(path.join(__dirname, "../add.html"));
-    console.log('\nadd.html');
+  // cms route loads cms
+  app.get("/add", function(req, res) {
+    res.render(path.join("add.handlebars"));
+    console.log('\nadd');
   });
 
-  // blog route loads blog.html
-  app.get("/about.html", function(req, res) {
-    res.sendFile(path.join(__dirname, "../about.html"));
-    console.log('\nabout.html');
+  // blog route loads blog
+  app.get("/about", function(req, res) {
+    res.render(path.join("about.handlebars"));
+    console.log('\nabout');
   });
 
-  // authors route loads author-manager.html
-  app.get("/content.html", function(req, res) {
-    res.sendFile(path.join(__dirname, "../content.html"));
-    console.log('\ncontent.html');
+  // authors route loads author-manager
+  app.get("/content", function(req, res) {
+    res.render(path.join("content.handlebars"));
+    console.log('\ncontent');
   });
 
-  app.get("/profile.html", function(req, res) {
-    res.sendFile(path.join(__dirname, "../profile.html"));
-    console.log('\nprofile.html');
+  app.get("/profile", function(req, res) {
+    res.render(path.join("profile.handlebars"));
+    console.log('\nprofile');
   });
 
-  app.get("/register.html", function(req, res) {
-    res.sendFile(path.join(__dirname, "../register.html"));
-    console.log('\nregister.html');
+  app.get("/signin", function(req, res) {
+    res.render(path.join("signin.handlebars"));
+    console.log('\nsignin');
   });
 
-}
+  app.get("/signup", function(req, res) {
+    res.render(path.join("signup.handlebars"));
+    console.log('\nsignup');
+  });
+
+  app.get("/budget", function(req, res) {
+    res.render(path.join("budget.handlebars"));
+    console.log('\nbudget');
+  });
+};
