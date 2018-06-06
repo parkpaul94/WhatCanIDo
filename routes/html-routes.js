@@ -28,30 +28,13 @@ module.exports = function(app) {
     console.log('\nabout');
   });
 
-  app.get("/profile", function(req, res) {
+  app.get("/api/profile", function(req, res) {
     db.Budget.findAll()
     .then(function (dbBudget) {
-        if (dbBudget.length===0) {
-            throw "No results";
-        };
-        res.render('profile',{
-            budgets: dbBudget,
-        });
-        return({budgets: dbBudget});
-    })
-    .catch(function (err) {
-        res.json(err);
-    })
-
-    db.Content.findAll()
-    .then(function (dbContent) {
-        if (dbContent.length===0) {
-            // throw "No results";
-        };
-        res.render('content',{
-            activities: dbContent,
-        });
-        return({activities: dbContent});
+        db.Content.findAll()
+            .then(function (dbContent) {
+                res.render('profile', { budgets: dbBudget, activities: dbContent });
+            })
     })
     .catch(function (err) {
         res.json(err);
