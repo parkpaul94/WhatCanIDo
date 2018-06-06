@@ -35,3 +35,6 @@ body, nav {
     background-image: url("../images/sample/sample4.jpg");
     background-size: cover;
 }
+.smallfont {
+    font-size: 20px;
+}
