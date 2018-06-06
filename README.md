@@ -1,2 +1,3 @@
-# 2-Project
-Team Project #2
+# WhatCanIDo
+Group Project No. 2
+

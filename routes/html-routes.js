@@ -28,12 +28,6 @@ module.exports = function(app) {
     console.log('\nabout');
   });
 
-  // authors route loads author-manager
-  app.get("/content", function(req, res) {
-    res.render(path.join("content.handlebars"));
-    console.log('\ncontent');
-  });
-
   app.get("/profile", function(req, res) {
     res.render(path.join("profile.handlebars"));
     console.log('\nprofile');
