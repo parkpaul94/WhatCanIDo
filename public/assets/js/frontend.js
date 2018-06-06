@@ -24,7 +24,7 @@ $(function() {
         }).catch((err) => console.log(err));
     })
 
-});
+
 
 $('.carousel.carousel-slider').carousel({
     fullWidth: true,
@@ -33,3 +33,32 @@ $('.carousel.carousel-slider').carousel({
 
 $('.slider').slider();
 
+
+
+console.log('TESTING');
+    $.ajax({
+        type: 'GET',
+        url: "/api/budget",
+    })
+    .then(function(data) {
+        $('#table') // append DATA to table
+    })
+
+    $('#budget_submit').on('click', function (event) {
+        console.log('POSTING TEST');
+        var postData = {
+            description: $('#description').val(),
+            cost: $('#price').val()
+        };
+        console.log(postData)
+        $.ajax("/api/budget", {
+            type: "POST",
+            data: postData
+        }).done(function(msg) {
+            console.log('Budget Logged');
+            $('#description').val('');
+            $('#price').val('');
+            $('body').html(msg)
+        })
+    })
+});

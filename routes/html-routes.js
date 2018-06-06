@@ -1,5 +1,5 @@
 var path = require("path");
-
+const db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -50,7 +50,22 @@ module.exports = function(app) {
   });
 
   app.get("/budget", function(req, res) {
-    res.render(path.join("budget.handlebars"));
-    console.log('\nbudget');
+    db.Budget.findAll()
+    .then(function (dbBudget) {
+        if (dbBudget.length===0) {
+            throw "No results";
+        };
+        res.render('budget',{
+            budgets: dbBudget,
+        });
+        return({budgets: dbBudget});
+    })
+    .catch(function (err) {
+        res.json(err);
+    })
   });
+  // app.get("/budget", function(req, res) {
+  //   res.render(path.join("budget.handlebars"));
+  //   console.log('\nbudget');
+  // });
 };
