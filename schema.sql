@@ -29,3 +29,14 @@ CREATE TABLE userInfo (
     LastName VARCHAR(20) NOT NULL,
 	primary key (item_id)
 );
+
+DROP DATABASE IF EXISTS budget;
+CREATE DATABASE budget;
+USE budget;
+
+CREATE TABLE budgetinfo (
+	user_id INTERGER AUTO_INCREMENT NOT NULL,
+	description VARCHAR(500) NOT NULL,
+	cost INTEGER(10) NOT NULL,
+	primary key (item_id)
+
