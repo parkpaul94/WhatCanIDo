@@ -55,18 +55,9 @@ module.exports = function (app) {
 
   app.get("/budget", function (req, res) {
     db.Budget.findAll()
-<<<<<<< HEAD
     .then(function (dbBudget) {
         res.render('budget',{
             budgets: dbBudget,
-=======
-      .then(function (dbBudget) {
-        // if (dbBudget.length===0) {
-        //     throw "No results";
-        // };
-        res.render('budget', {
-          budgets: dbBudget,
->>>>>>> 2c5b629b2a47c9b4b2babeb99000b51d7b004238
         });
         return ({ budgets: dbBudget });
       })
@@ -77,18 +68,9 @@ module.exports = function (app) {
 
   app.get("/content", function (req, res) {
     db.Content.findAll()
-<<<<<<< HEAD
     .then(function (dbContent) {
         res.render('content',{
             activities: dbContent,
-=======
-      .then(function (dbContent) {
-        if (dbContent.length === 0) {
-          // throw "No results";
-        };
-        res.render('content', {
-          activities: dbContent,
->>>>>>> 2c5b629b2a47c9b4b2babeb99000b51d7b004238
         });
         return ({ activities: dbContent });
       })
