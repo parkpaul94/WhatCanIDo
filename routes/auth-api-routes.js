@@ -19,7 +19,7 @@ module.exports = function(app, passport) {
     console.log('callback', req, res)
   });
 
-  app.get('/profile', isLoggedIn, authController.userloggedin);
+  
 
   app.get('/logout', authController.logout);
 
