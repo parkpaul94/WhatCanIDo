@@ -2,7 +2,7 @@ const db = require("../models");
 
 module.exports = function (app) {
     app.post('/api/budget', function(req, res) {
-        var budget = req.body;
+        var budget = req.body; 
         console.log(budget);
         db.Budget.create(req.body).then(function(budget) {
             res.redirect('/budget');
@@ -11,9 +11,9 @@ module.exports = function (app) {
     app.get("/api/budget", function(req, res) {
         db.Budget.findAll()
         .then(function (dbBudget) {
-            if (dbBudget.length===0) {
-                throw "No results";
-            };
+            // if (dbBudget.length===0) {
+            //     throw "No results";
+            // };
 
             res.render('budget',{
                 budgets: dbBudget,
@@ -27,6 +27,7 @@ module.exports = function (app) {
     
     app.post('/api/content', function(req, res) {
         var active = req.body;
+        req.body.UserId = req.user.id;
         console.log(active);
         db.Content.create(req.body).then(function(active) {
             res.redirect('/profile');
@@ -49,9 +50,13 @@ module.exports = function (app) {
     });
 
     app.get("/api/profile", function(req, res) {
-        db.Budget.findAll()
+        db.Budget.findAll( {where: {
+            UserId: req.user.id
+          }})
         .then(function (dbBudget) {
-            db.Content.findAll()
+            db.Content.findAll( {where: {
+                UserId: req.user.id
+              }})
                 .then(function (dbContent) {
                     res.render('profile', { budgets: dbBudget, activities: dbContent });
                 })

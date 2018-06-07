@@ -22,13 +22,8 @@ module.exports = (sequelize, DataTypes) => {
         updatedAt: DataTypes.DATE
     });
 
-    // Budget.associate = function(models) {
-    //     Budget.belongsTo(models.User, {
-    //       foreignKey: {
-    //         allowNull: false
-    //       }
-    //     });
-    //   };
-      
+    Budget.associate = function(models) {
+        Budget.belongsTo(models.User);
+      };
     return Budget;
 }

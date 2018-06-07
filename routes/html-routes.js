@@ -18,7 +18,7 @@ module.exports = function(app) {
 
   // cms route loads cms
   app.get("/add", function(req, res) {
-    res.render(path.join("add.handlebars"));
+    res.render(path.join("add.handlebars"), req.user);
     console.log('\nadd');
   });
 
@@ -56,9 +56,6 @@ module.exports = function(app) {
   app.get("/budget", function(req, res) {
     db.Budget.findAll()
     .then(function (dbBudget) {
-        if (dbBudget.length===0) {
-            throw "No results";
-        };
         res.render('budget',{
             budgets: dbBudget,
         });
@@ -72,9 +69,6 @@ module.exports = function(app) {
   app.get("/content", function(req, res) {
     db.Content.findAll()
     .then(function (dbContent) {
-        if (dbContent.length===0) {
-            // throw "No results";
-        };
         res.render('content',{
             activities: dbContent,
         });

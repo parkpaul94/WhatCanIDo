@@ -22,8 +22,16 @@ module.exports = (sequelize, DataTypes) => {
             type:DataTypes.INTEGER(10),
             allowNull: false
         },
+        UserId: {
+            type:DataTypes.INTEGER(10),
+            allowNull: false
+        },
         createdAt: DataTypes.DATE,
         updatedAt: DataTypes.DATE
     });
+
+    Content.associate = function(models) {
+        Content.belongsTo(models.User);
+      };
     return Content;
 }
