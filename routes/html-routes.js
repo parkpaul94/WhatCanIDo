@@ -1,5 +1,5 @@
 var path = require("path");
-
+const db = require("../models");
 // Routes
 // =============================================================
 module.exports = function(app) {
@@ -28,15 +28,19 @@ module.exports = function(app) {
     console.log('\nabout');
   });
 
-  // authors route loads author-manager
-  app.get("/content", function(req, res) {
-    res.render(path.join("content.handlebars"));
-    console.log('\ncontent');
-  });
-
   app.get("/profile", function(req, res) {
-    res.render(path.join("profile.handlebars"));
-    console.log('\nprofile');
+    db.Budget.findAll()
+    .then(function (dbBudget) {
+        db.Content.findAll()
+            .then(function (dbContent) {
+                res.render('profile', { 
+                  budgets: dbBudget, activities: dbContent 
+                });
+            })
+    })
+    .catch(function (err) {
+        res.json(err);
+    })
   });
 
   app.get("/signin", function(req, res) {
@@ -50,7 +54,34 @@ module.exports = function(app) {
   });
 
   app.get("/budget", function(req, res) {
-    res.render(path.join("budget.handlebars"));
-    console.log('\nbudget');
+    db.Budget.findAll()
+    .then(function (dbBudget) {
+        if (dbBudget.length===0) {
+            throw "No results";
+        };
+        res.render('budget',{
+            budgets: dbBudget,
+        });
+        return({budgets: dbBudget});
+    })
+    .catch(function (err) {
+        res.json(err);
+    })
+  });
+
+  app.get("/content", function(req, res) {
+    db.Content.findAll()
+    .then(function (dbContent) {
+        if (dbContent.length===0) {
+            // throw "No results";
+        };
+        res.render('content',{
+            activities: dbContent,
+        });
+        return({activities: dbContent});
+    })
+    .catch(function (err) {
+        res.json(err);
+    })
   });
 };
