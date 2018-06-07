@@ -14,6 +14,10 @@ module.exports = (sequelize, DataTypes) => {
             type:DataTypes.INTEGER(10),
             allowNull: false
         },
+        UserId: {
+            type:DataTypes.INTEGER(10),
+            allowNull: false
+        },
         // remaining: {
         //     type:DataTypes.INTEGER(10),
         //     allowNull: false

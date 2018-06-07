@@ -3,6 +3,7 @@ const db = require("../models");
 module.exports = function (app) {
     app.post('/api/budget', function(req, res) {
         var budget = req.body; 
+        req.body.UserId = req.user.id;
         console.log(budget);
         db.Budget.create(req.body).then(function(budget) {
             res.redirect('/budget');
