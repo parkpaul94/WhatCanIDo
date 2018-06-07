@@ -28,20 +28,20 @@ module.exports = function(app) {
     console.log('\nabout');
   });
 
-  app.get("/profile", function(req, res) {
-    db.Budget.findAll()
-    .then(function (dbBudget) {
-        db.Content.findAll()
-            .then(function (dbContent) {
-                res.render('profile', { 
-                  budgets: dbBudget, activities: dbContent 
-                });
-            })
-    })
-    .catch(function (err) {
-        res.json(err);
-    })
-  });
+  // app.get("/profile", function(req, res) {
+  //   db.Budget.findAll()
+  //   .then(function (dbBudget) {
+  //       db.Content.findAll()
+  //           .then(function (dbContent) {
+  //               res.render('profile', { 
+  //                 budgets: dbBudget, activities: dbContent 
+  //               });
+  //           })
+  //   })
+  //   .catch(function (err) {
+  //       res.json(err);
+  //   })
+  // });
 
   app.get("/signin", function(req, res) {
     res.render(path.join("signin.handlebars"));
